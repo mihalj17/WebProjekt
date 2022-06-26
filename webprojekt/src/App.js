@@ -9,28 +9,28 @@ import {
   Card,
   Form,
   Nav,
-  Navbar,
   NavDropdown,
 } from "react-bootstrap";
 import Cars from "./components/Cars";
 import Motors from "./components/Motors";
 import { Route, Router, Routes } from "react-router-dom";
-import Filter from "./components/Filter";
+import { Switch } from "react-router";
+import firebase from 'firebase/app';
+import 'firebase/storage';//if using Fireba
+import Trucks from "./components/Truck";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-
     <div className="App">
-      <header className="App-header">
-        <Container className="d-flex flex-row">
-          <Filter />
-          <Motors></Motors>
-          
-          
-        </Container>
-      </header>
+    <Navbar></Navbar>
+    <Routes>
+    <Route path="/" element={<Cars></Cars>}> </Route>
+    <Route path="/cars" element={<Cars></Cars>}> </Route>
+    <Route path="/motors" element={<Motors></Motors>}> </Route>
+    <Route path="/trucks" element={<Trucks></Trucks>}> </Route>
+    </Routes>
     </div>
- 
   );
 }
 

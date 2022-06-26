@@ -9,6 +9,8 @@ import {
 import { firestore } from "../lib/init-firebase";
 import Card from "./Card";
 import { Button } from "react-bootstrap";
+import firebase from 'firebase/app';
+import 'firebase/storage';//if using Fireba
 /*
 var menu = [
   {
